@@ -95,31 +95,178 @@ import 'dart:io';
 
 
 
+// ----------------------------- functions
 
-
-void main() {
-  sum();
+// void main() {
+//   sum();
   
-  sumParams(10, 20);
+//   sumParams(10, 20);
   
-  var sum1 = sumReturn(20,30);
-  print(sum1);
+//   var sum1 = sumReturn(20,30);
+//   print(sum1);
 
-  sumReq(fnum: 100, snum: 200, tnum: 100);
-}
+//   sumReq(fnum: 100, snum: 200, tnum: 100);
+// }
 
-void sum() {
-  print(2+3);
-}
+// void sum() {
+//   print(2+3);
+// }
 
-void sumParams(int a, int b) {
-  print("${a+b}");
-}
+// void sumParams(int a, int b) {
+//   print("${a+b}");
+// }
 
-int sumReturn( int a, int b) {
-  return a + b;
-}
+// int sumReturn( int a, int b) {
+//   return a + b;
+// }
 
-void sumReq({required int fnum, required int snum, int tnum = 0}) {   // parameters known as named parameter, required: must need value, tnum = 0: default value
-  print(fnum + snum + tnum);    
-}
+// void sumReq({required int fnum, required int snum, int tnum = 0}) {   // parameters known as named parameter, required: must need value, tnum = 0: default value
+//   print(fnum + snum + tnum);    
+// }
+
+
+
+
+// ------------------------------------- Furure functions
+
+// void main() {
+//   sum();      // calling sum funtion inside a function
+//   print("After Future");
+// }
+
+// Future<int> sumFuture(int a, int b) async {
+//   await Future.delayed(Duration(seconds: 3));
+//   print("In Sum Future: ${a + b}");
+//   return a+b;
+// }
+
+// Future<void> sum() async {
+//   await sumFuture(20, 30);     // await: wait for other function that declierd before
+//   print("In just Sum ");
+// }
+
+
+
+
+
+// ----------------------------------  variable keywords 
+
+// void main() {
+  
+//   final String name;   // declaring a Sting with final.  value assign in runtime
+//   name = "Swofvan";  // asign a value. we can't change it latter. it works after we asign value
+
+
+//   const String location = "Kochi";  // const start to work when declaring. we can declare without value
+
+// }
+
+
+
+
+// ----------------------------------  class and object
+
+// class Person {
+//   String? name;  // ? : if value not string or value is empty = null
+//   int? age;
+
+//   Person(String name, int age) {      // constector
+//     this.name = name;
+//     this.age = age;
+//   } 
+// }
+
+// class Person {
+//   final String name;
+//   final int age;
+
+//   Person(this.name, this.age);      // constector
+
+//   Person.ageAbove25(this.name, this.age) {
+//     print(name);
+//   }
+
+//   Person.agebelow25(this.name, this.age) {
+//     print(name);
+//   }
+
+//   void sayHi() {
+//     print("Hi");
+//   }
+
+// }
+
+// void main() {
+
+//   // final person = Person("Swofvan", 23);  // we cant change the value becuase of final
+//   // print(person.name);
+
+//   final person = Person.agebelow25("Swofvan", 23); 
+//   final Person2 = Person.ageAbove25("jishnu", 25);
+
+//   person.sayHi();   // caling with objectname = person 
+
+// }
+
+
+
+
+// ----------------------------------  inheritance
+
+// abstract class Animal {  // abstract: uses for base class, we cant use objects for this class
+//   void sayHello() {
+//     print('Animal Say hello');
+//   }
+// }
+
+// class Human extends Animal {  // extends: for accessing other class properties
+//   void sayName() {
+//     print("Say Name");
+//   }
+
+//   @override        // uses when 2 classes came with same function names 
+//   void sayHello() {
+//     print("Say Hello");
+//     super.sayHello();  // call function from super class
+//   }
+// }
+//  void main() { 
+//   final human = Human();
+//   human.sayHello();
+//   human.sayName();
+// }
+
+
+
+// abstract class Animal {  // its works like a interface we dont write function here
+//   void sayHello(); // function declared
+// }
+
+// class Human implements Animal {
+  
+//   @override    
+//   void sayHello() {    // write function here
+//     print('Human Hello');
+//   } 
+// }
+ 
+
+// multiple inhertance - mixin
+
+// mixin Animal1 { 
+//   int age = 0;
+//   void sayHello() {
+//     print("Mixin 1 hello");
+//   }
+// }
+
+// mixin Animal2 {  
+//   int age = 0;
+//   void sayHello() {
+//     print("Mixin 2 hello");
+//   }
+// }
+
+// class Human with Animal1,Animal2 {
+   
+// }
